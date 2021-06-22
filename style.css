@@ -2,6 +2,13 @@
 :root {
   --primary-color: hsl(354, 70%, 50%);
   --secondary-color: hsl(250, 50%, 12%);
+  --primary-font-size: 1.2rem;
+  --secondary-font-size: 1rem;
+  --dropdown-arrow-size: 1.75rem;
+  --width-dropdown-wrapper : 90%;
+  --primary-flag-width: 2.5rem;
+  --secondary-flag-width: 2rem;
+
 }
 
 *::before,
@@ -18,7 +25,10 @@ li {
 
 img {
   margin-right: 1.5rem;
-  width: 2.5rem;
+}
+
+span{
+  text-align: left;
 }
 
 .container {
@@ -79,9 +89,9 @@ header {
   border: 1px solid var(--secondary-color);
   border-radius: 0.5rem;
   text-align: center;
-  padding: 1rem;
-  display: flex;
+  padding: 0.25rem 1rem;
   margin-top: 2rem;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--secondary-color);
@@ -92,20 +102,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: var(--primary-font-size);
+}
+
+#from-currency img,
+#to-currency img {
+  width:var(--primary-flag-width)
 }
 
 .down-arrow {
-  font-size: 2rem;
+  font-size: var(--dropdown-arrow-size);
   color: var(--primary-color);
 }
 
 .dropdown-wrapper {
   display: none;
   position: absolute;
-  width: 80%;
+  width: var(--width-dropdown-wrapper);
   left: 0;
-  top: 4rem;
+  top: calc(var(--primary-font-size) + (2 * 0.5rem));
   z-index: 1;
   /* border: 1px solid blue; */
 }
@@ -123,20 +138,20 @@ header {
   overflow-x: hidden;
   border-radius: 0.25rem;
   border: none;
-  /* width: 100%; */
 }
 
 .dropdown-item {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem 1rem;
   text-align: left;
   border-bottom: 1px solid var(--secondary-color);
+  font-size: var(--secondary-font-size);
 }
 
 .dropdown-item img {
-  width: 2rem;
+  width: var(--secondary-flag-width);
 }
 
 .dropdown-item:hover {
@@ -161,4 +176,18 @@ header {
   font-size: 1.5rem;
   text-align: center;
   padding-top: 1rem;
+}
+
+
+@media only screen and (max-width: 420px) {
+  .card{
+    max-width:420px;
+    height: 100%;
+    display: grid;
+    place-items: end center;
+  }
+  .dropdown{
+    width:100%
+  }
+  
 }

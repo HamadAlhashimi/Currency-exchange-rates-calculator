@@ -177,7 +177,6 @@ const getResult = async (fromCurrency, toCurrency, amount) => {
   const dataObj = await res.json();
   dataObj["amount"] = amount;
   setResult(dataObj);
-  // console.log(dataObj);
 };
 
 const setResult = (dataObj) => {
