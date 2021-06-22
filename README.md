@@ -1,4 +1,4 @@
-# currency converter
+# Currency exchange rates calculator
 
 </br>
 
