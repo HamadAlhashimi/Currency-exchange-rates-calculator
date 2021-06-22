@@ -139,9 +139,17 @@ const hideDropdown = (e) => {
 
 const validateInputAmount = (e) => {
   const amountHasDecimal = amount.value.includes(".") ? true : false;
+  console.log(e.code)
+  if(e.code === 'Backspace') return popNumber()
   if (amountHasDecimal & e.code.includes("Period")) return false;
   return e.code.includes("Digit") | e.code.includes("Period") ? null : false;
 };
+
+const popNumber= () =>{
+  const amountElement = document.querySelector('#amount')
+  amountElement.value.slice(0,-1)
+  return null
+}
 
 const exchangeCurrencies = () => {
   const fromCurrency = document.querySelector("#from-currency");
